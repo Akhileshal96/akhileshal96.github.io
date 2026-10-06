@@ -1577,7 +1577,7 @@
   /* ─── V2 ALIGNMENT / SPACING PASS ─── */
   #snapshot { padding-top: 0; padding-bottom: 42px; }
   #about { padding-top: 72px; }
-  #skills, #stack, #command, #experience, #impact, #education, #certs, #languages { scroll-margin-top: 95px; }
+  #skills, #stack, #command, #experience, #impact, #lab, #education, #certs, #languages { scroll-margin-top: 95px; }
 
   .stat-grid { align-content: stretch; }
   .stat { min-height: 0; display:flex; flex-direction:column; justify-content:center; }
@@ -1873,6 +1873,232 @@
     .hero-inner { gap: 16px; }
   }
 
+
+  /* ─── AI & AUTOMATION LAB ─── */
+  #lab {
+    background:
+      radial-gradient(circle at 88% 12%, rgba(108,76,255,.12), transparent 28%),
+      radial-gradient(circle at 12% 88%, rgba(6,182,212,.10), transparent 30%),
+      #07101f;
+    color: #fff;
+  }
+
+  #lab .section-head { border-bottom-color: rgba(255,255,255,.12); }
+  #lab .section-title { color: #fff; }
+  #lab .section-sub { color: #8390a6; }
+  #lab .section-label {
+    background: rgba(80,122,255,.14);
+    color: #8eb0ff;
+  }
+  #lab .section-label::before { background:#7ea5ff; }
+
+  .lab-intro {
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:34px;
+    align-items:end;
+    padding:28px 0 34px;
+  }
+  .lab-kicker {
+    display:block;
+    font-family:'JetBrains Mono',monospace;
+    font-size:.62rem;
+    letter-spacing:.12em;
+    color:#82e4ef;
+    margin-bottom:12px;
+  }
+  .lab-intro h3 {
+    font-size:clamp(1.35rem,2.4vw,2rem);
+    line-height:1.15;
+    letter-spacing:-.025em;
+    max-width:720px;
+  }
+  .lab-intro > p {
+    color:#aab4c5;
+    font-size:.88rem;
+    line-height:1.7;
+  }
+
+  .lab-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+  }
+  .lab-card {
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(255,255,255,.045);
+    border-radius:20px;
+    padding:26px;
+    min-height:300px;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    overflow:hidden;
+    transition:.35s ease;
+    backdrop-filter: blur(10px);
+  }
+  .lab-card::after {
+    content:'';
+    position:absolute;
+    inset:auto -50px -70px auto;
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(76,131,255,.20),transparent 66%);
+    pointer-events:none;
+  }
+  .lab-card:hover {
+    transform:translateY(-4px);
+    border-color:rgba(126,165,255,.55);
+    background:rgba(255,255,255,.065);
+  }
+  .lab-card.featured {
+    grid-column:1/-1;
+    min-height:0;
+    background:
+      linear-gradient(135deg,rgba(44,82,190,.22),rgba(6,182,212,.08)),
+      rgba(255,255,255,.04);
+  }
+  .lab-card.featured::before {
+    content:'';
+    position:absolute;
+    left:0; top:0; right:0;
+    height:2px;
+    background:linear-gradient(90deg,#638bff,#66dbe9);
+  }
+
+  .lab-top {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:22px;
+    position:relative;
+    z-index:1;
+  }
+  .lab-mark {
+    width:42px; height:42px;
+    border-radius:12px;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg,#3159d8,#0ea5c6);
+    color:#fff;
+    font-family:'JetBrains Mono',monospace;
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.06em;
+    box-shadow:0 8px 24px rgba(40,95,220,.22);
+  }
+  .lab-status {
+    font-family:'JetBrains Mono',monospace;
+    font-size:.56rem;
+    letter-spacing:.08em;
+    color:#8390a6;
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:999px;
+    padding:5px 8px;
+  }
+
+  .lab-card h3 {
+    font-size:1.28rem;
+    margin-bottom:4px;
+    letter-spacing:-.02em;
+    position:relative;
+    z-index:1;
+  }
+  .lab-role {
+    color:#78dce8;
+    font-family:'JetBrains Mono',monospace;
+    font-size:.67rem;
+    margin-bottom:14px;
+    position:relative;
+    z-index:1;
+  }
+  .lab-desc {
+    color:#b6c0d0;
+    font-size:.86rem;
+    line-height:1.68;
+    margin-bottom:20px;
+    max-width:880px;
+    position:relative;
+    z-index:1;
+  }
+  .lab-focus {
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:auto;
+    position:relative;
+    z-index:1;
+  }
+  .lab-focus span {
+    font-family:'JetBrains Mono',monospace;
+    font-size:.58rem;
+    color:#b6c8eb;
+    border:1px solid rgba(150,180,255,.15);
+    background:rgba(67,107,190,.10);
+    padding:5px 8px;
+    border-radius:999px;
+  }
+  .lab-meta {
+    margin-top:18px;
+    padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.08);
+    position:relative;
+    z-index:1;
+  }
+  .lab-meta small {
+    font-family:'JetBrains Mono',monospace;
+    color:#71809a;
+    font-size:.55rem;
+    letter-spacing:.1em;
+  }
+  .lab-meta p {
+    margin-top:6px;
+    color:#b9c3d2;
+    font-size:.76rem;
+  }
+
+  .lab-principle {
+    margin-top:16px;
+    display:flex;
+    gap:15px;
+    align-items:flex-start;
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:16px;
+    padding:18px 20px;
+    background:rgba(255,255,255,.035);
+  }
+  .lab-principle-icon {
+    width:34px; height:34px; min-width:34px;
+    border-radius:10px;
+    display:grid;
+    place-items:center;
+    color:#82e4ef;
+    background:rgba(6,182,212,.10);
+  }
+  .lab-principle strong {
+    display:block;
+    font-size:.86rem;
+    margin-bottom:5px;
+  }
+  .lab-principle p {
+    color:#9da9ba;
+    font-size:.78rem;
+    line-height:1.55;
+  }
+
+  @media (max-width: 820px) {
+    .lab-intro { grid-template-columns:1fr; gap:14px; }
+    .lab-grid { grid-template-columns:1fr; }
+    .lab-card.featured { grid-column:auto; }
+  }
+
+  @media (max-width: 480px) {
+    .lab-card { padding:22px; min-height:0; }
+    .lab-principle { padding:16px; }
+  }
+
 </style>
 </head>
 <body>
@@ -1889,6 +2115,7 @@
     <li><a href="#command">Workflow</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#impact">Selected Work</a></li>
+    <li><a href="#lab">AI Lab</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Contact</a>
   <div class="nav-burger" id="burger" onclick="toggleNav()">
@@ -2297,10 +2524,111 @@
 </section>
 
 <!-- EDUCATION -->
+
+<!-- AI & AUTOMATION LAB -->
+<section id="lab">
+  <div class="section-head">
+    <div class="section-label-wrap">
+      <div class="section-label">07 · Innovation</div>
+      <h2 class="section-title">Beyond HR — <span class="grad">AI & Automation Lab</span></h2>
+    </div>
+    <div class="section-sub">Personal innovation projects in intelligent workflows & agent systems</div>
+  </div>
+
+  <div class="section-body">
+    <div class="lab-intro reveal">
+      <div>
+        <span class="lab-kicker">EXPERIMENT · BUILD · IMPROVE</span>
+        <h3>Exploring how AI agents, automation and decision-support systems can make complex workflows easier to operate.</h3>
+      </div>
+      <p>These are private innovation projects developed outside my core HR responsibilities. I use them to experiment with agent orchestration, research workflows, monitoring, dashboards, controls and human–AI interaction.</p>
+    </div>
+
+    <div class="lab-grid">
+      <article class="lab-card featured reveal">
+        <div class="lab-top">
+          <div class="lab-mark">TR</div>
+          <div class="lab-status">PRIVATE DEVELOPMENT</div>
+        </div>
+        <h3>Trident</h3>
+        <p class="lab-role">Multi-Agent AI System</p>
+        <p class="lab-desc">A personal experimental platform combining AI agents, research, monitoring, dashboards and workflow automation to support structured decision-making and continuous system improvement.</p>
+        <div class="lab-focus">
+          <span>Agent Orchestration</span>
+          <span>GPT Integration</span>
+          <span>Automation</span>
+          <span>Decision Support</span>
+          <span>Monitoring</span>
+        </div>
+        <div class="lab-meta">
+          <small>MY ROLE</small>
+          <p>Concept design · Workflow architecture · Testing · Iteration · System improvement</p>
+        </div>
+      </article>
+
+      <article class="lab-card reveal">
+        <div class="lab-top">
+          <div class="lab-mark">AT</div>
+          <div class="lab-status">INTERACTION LAYER</div>
+        </div>
+        <h3>Athena</h3>
+        <p class="lab-role">Conversational Intelligence Layer</p>
+        <p class="lab-desc">An interaction layer designed to make complex systems easier to operate through natural conversation, voice-style interaction and contextual guidance.</p>
+        <div class="lab-focus">
+          <span>Conversational UX</span>
+          <span>Human–AI Interaction</span>
+          <span>Agent Coordination</span>
+          <span>Productivity</span>
+        </div>
+      </article>
+
+      <article class="lab-card reveal">
+        <div class="lab-top">
+          <div class="lab-mark">HM</div>
+          <div class="lab-status">RESEARCH AGENT</div>
+        </div>
+        <h3>Hermes</h3>
+        <p class="lab-role">Research & Insight Agent</p>
+        <p class="lab-desc">A research-focused agent concept built to gather information, organise signals, surface patterns and present structured insights for faster review and decision support.</p>
+        <div class="lab-focus">
+          <span>Research Workflows</span>
+          <span>Information Synthesis</span>
+          <span>Monitoring</span>
+          <span>Insight Generation</span>
+        </div>
+      </article>
+
+      <article class="lab-card reveal">
+        <div class="lab-top">
+          <div class="lab-mark">HL</div>
+          <div class="lab-status">DECISION ENGINE</div>
+        </div>
+        <h3>Helios</h3>
+        <p class="lab-role">Rules & Decision Engine</p>
+        <p class="lab-desc">An experimental decision engine focused on qualification logic, process controls, monitoring and disciplined rule-based execution.</p>
+        <div class="lab-focus">
+          <span>Rules Engine</span>
+          <span>Controls</span>
+          <span>Monitoring</span>
+          <span>Process Logic</span>
+          <span>Automation</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="lab-principle reveal">
+      <div class="lab-principle-icon">◎</div>
+      <div>
+        <strong>Why this belongs in an HR portfolio</strong>
+        <p>It demonstrates the same operating mindset I bring to HR: structured workflows, clean handoffs, better visibility, controls, automation and continuous improvement.</p>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="education">
   <div class="section-head">
     <div class="section-label-wrap">
-      <div class="section-label">07 · Education</div>
+      <div class="section-label">08 · Education</div>
       <h2 class="section-title"><span class="grad">Education</span></h2>
     </div>
     <div class="section-sub">Academic background</div>
@@ -2331,7 +2659,7 @@
 <section id="certs">
   <div class="section-head">
     <div class="section-label-wrap">
-      <div class="section-label">08 · Credentials</div>
+      <div class="section-label">09 · Credentials</div>
       <h2 class="section-title"><span class="grad">Certifications</span></h2>
     </div>
     <div class="section-sub">Professional credentials</div>
@@ -2370,7 +2698,7 @@
 <section id="languages">
   <div class="section-head">
     <div class="section-label-wrap">
-      <div class="section-label">09 · Languages</div>
+      <div class="section-label">10 · Languages</div>
       <h2 class="section-title"><span class="grad">Languages</span></h2>
     </div>
     <div class="section-sub">Communication channels</div>
@@ -2388,7 +2716,7 @@
 <section id="contact">
   <div class="section-body">
     <div class="contact-wrap reveal">
-      <div class="contact-label-mini">10 · Get in touch</div>
+      <div class="contact-label-mini">11 · Get in touch</div>
       <p class="contact-cta">Let's connect for opportunities in <span class="grad">HR Operations, Shared Services, HRIS & People Operations</span> with a focus on Darwinbox, employee lifecycle, data quality and process improvement.</p>
 
       <div class="contact-grid">
