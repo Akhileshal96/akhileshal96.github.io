@@ -2099,6 +2099,132 @@
     .lab-principle { padding:16px; }
   }
 
+
+  /* ─── TRIDENT EVOLUTION TIMELINE ─── */
+  .trident-evolution {
+    margin: 8px 0 28px;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 22px;
+    background: rgba(255,255,255,.03);
+    padding: 28px;
+  }
+  .evolution-head {
+    max-width: 840px;
+    margin-bottom: 28px;
+  }
+  .evolution-head h3 {
+    color:#fff;
+    font-size:clamp(1.3rem,2.2vw,1.85rem);
+    line-height:1.16;
+    letter-spacing:-.025em;
+    margin-bottom:10px;
+  }
+  .evolution-head p {
+    color:#9eabc0;
+    font-size:.84rem;
+    line-height:1.65;
+  }
+  .evolution-track {
+    position:relative;
+  }
+  .evolution-track::before {
+    content:'';
+    position:absolute;
+    left:118px;
+    top:10px;
+    bottom:10px;
+    width:1px;
+    background:linear-gradient(180deg,rgba(99,139,255,.75),rgba(102,219,233,.18));
+  }
+  .evolution-step {
+    display:grid;
+    grid-template-columns:92px 28px 1fr;
+    gap:14px;
+    align-items:start;
+    padding:0 0 24px;
+    position:relative;
+  }
+  .evolution-step:last-child { padding-bottom:0; }
+  .evolution-date {
+    font-family:'JetBrains Mono',monospace;
+    font-size:.58rem;
+    line-height:1.4;
+    letter-spacing:.06em;
+    color:#7e8ba1;
+    text-align:right;
+    padding-top:4px;
+  }
+  .evolution-dot {
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    background:#628bff;
+    border:3px solid #07101f;
+    box-shadow:0 0 0 1px rgba(126,165,255,.38),0 0 14px rgba(99,139,255,.26);
+    justify-self:center;
+    margin-top:2px;
+    z-index:2;
+  }
+  .evolution-step.current .evolution-dot {
+    background:#69dce9;
+    box-shadow:0 0 0 1px rgba(105,220,233,.45),0 0 16px rgba(105,220,233,.30);
+  }
+  .evolution-content {
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.025);
+    border-radius:14px;
+    padding:16px 18px;
+  }
+  .evolution-step.current .evolution-content {
+    border-color:rgba(105,220,233,.22);
+    background:linear-gradient(135deg,rgba(49,89,216,.10),rgba(14,165,198,.06));
+  }
+  .evolution-content > span {
+    display:block;
+    font-family:'JetBrains Mono',monospace;
+    font-size:.54rem;
+    letter-spacing:.08em;
+    color:#75a0ff;
+    margin-bottom:6px;
+  }
+  .evolution-step.current .evolution-content > span { color:#72dce8; }
+  .evolution-content h4 {
+    color:#fff;
+    font-size:.95rem;
+    margin-bottom:7px;
+  }
+  .evolution-content p {
+    color:#aab5c6;
+    font-size:.78rem;
+    line-height:1.6;
+  }
+  @media (max-width: 720px) {
+    .trident-evolution { padding:22px 18px; }
+    .evolution-track::before { left:8px; }
+    .evolution-step {
+      grid-template-columns:18px 1fr;
+      gap:10px;
+      padding-bottom:18px;
+    }
+    .evolution-date {
+      grid-column:2;
+      grid-row:1;
+      text-align:left;
+      padding:0;
+      margin-bottom:-2px;
+    }
+    .evolution-dot {
+      grid-column:1;
+      grid-row:1 / span 2;
+      margin-top:3px;
+    }
+    .evolution-content {
+      grid-column:2;
+      grid-row:2;
+      padding:14px 15px;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -2542,6 +2668,77 @@
         <h3>Building Trident as a multi-engine algorithmic trading system with AI-assisted intelligence, evidence gates and hard risk controls.</h3>
       </div>
       <p>Trident is a private personal R&D project outside my HR role. It combines multiple trading engines with shared market intelligence, monitoring, data infrastructure and a fail-closed risk layer. The focus is disciplined experimentation and system design — not unverified performance claims.</p>
+    </div>
+
+
+    <div class="trident-evolution reveal">
+      <div class="evolution-head">
+        <span class="lab-kicker">PROJECT EVOLUTION</span>
+        <h3>From a single intraday bot to a controlled multi-engine trading platform.</h3>
+        <p>Trident has evolved through successive research, infrastructure and risk-control stages. The timeline below shows how the project started, what changed, and where it stands now.</p>
+      </div>
+
+      <div class="evolution-track">
+        <article class="evolution-step">
+          <div class="evolution-date">JUL 2025</div>
+          <div class="evolution-dot"></div>
+          <div class="evolution-content">
+            <span>01 · ORIGIN</span>
+            <h4>Trident Trade Bot V2 — “Aura”</h4>
+            <p>Started as an Indian-equity intraday automation project using Zerodha Kite. The original system combined EMA, RSI and MACD signals with market-context checks, GPT-assisted filtering, risk limits, Telegram controls and basic trade logging.</p>
+          </div>
+        </article>
+
+        <article class="evolution-step">
+          <div class="evolution-date">JUL–SEP 2025</div>
+          <div class="evolution-dot"></div>
+          <div class="evolution-content">
+            <span>02 · EARLY DEVELOPMENT</span>
+            <h4>Signal Quality, Risk & Operator Controls</h4>
+            <p>The single-bot concept matured with broader NIFTY screening, GPT veto logic, trailing stops, smart re-entry, live/test modes, P&amp;L tracking, Telegram notifications and stronger daily risk guards.</p>
+          </div>
+        </article>
+
+        <article class="evolution-step">
+          <div class="evolution-date">MAR–MAY 2026</div>
+          <div class="evolution-dot"></div>
+          <div class="evolution-content">
+            <span>03 · PRODUCTION ENGINEERING</span>
+            <h4>Cloud Deployment & System Hardening</h4>
+            <p>Trident moved into a managed cloud setup with GitHub-synchronised code, system services, paper-trading lanes, multi-position logic and better runtime observability. The focus shifted from “making trades” to building a system that could prove reliability before live authority.</p>
+          </div>
+        </article>
+
+        <article class="evolution-step">
+          <div class="evolution-date">AUG 2026</div>
+          <div class="evolution-dot"></div>
+          <div class="evolution-content">
+            <span>04 · ARCHITECTURE EXPANSION</span>
+            <h4>From One Bot to Multiple Engines</h4>
+            <p>The architecture expanded into dedicated trading engines with shared services: Helios for swing equities, Hermes for intraday equities, Orion for defined-risk options, Athena for intelligence and monitoring, and Guardian as an independent risk boundary. The deployment was migrated to a Hostinger VPS with separate live, shadow and research services.</p>
+          </div>
+        </article>
+
+        <article class="evolution-step">
+          <div class="evolution-date">SEP 2026</div>
+          <div class="evolution-dot"></div>
+          <div class="evolution-content">
+            <span>05 · EVIDENCE & SAFETY</span>
+            <h4>Forward Validation, Release Gates & Fail-Closed Controls</h4>
+            <p>Development moved toward frozen datasets, prospective forward testing, causal replay, engine qualification, independent certification, broker reconciliation and fail-closed deployment gates. Research and backtests were separated from live authority.</p>
+          </div>
+        </article>
+
+        <article class="evolution-step current">
+          <div class="evolution-date">NOW · OCT 2026</div>
+          <div class="evolution-dot"></div>
+          <div class="evolution-content">
+            <span>06 · CURRENT STATE</span>
+            <h4>AI-Assisted, Multi-Engine Trading R&amp;D Platform</h4>
+            <p>Trident now operates as a modular trading R&amp;D system with engine-specific qualification, shared intelligence, monitoring, broker integration, risk controls and an expanding GPT-assisted improvement loop. The current development goal is to make the system progressively more reliable and evidence-driven while keeping live-trading authority behind explicit qualification and release gates.</p>
+          </div>
+        </article>
+      </div>
     </div>
 
     <div class="lab-grid">
