@@ -1458,6 +1458,121 @@
     .cred-chip { right: 10px; padding: 10px 12px; }
     .hud { width: 20px; height: 20px; }
   }
+
+  /* ─── V2 RECRUITER / COMMAND CENTER UPGRADE ─── */
+  .hero-current {
+    display:flex; align-items:center; flex-wrap:wrap; gap:8px 10px;
+    margin:-12px 0 24px; color:var(--ink-soft); font-size:.82rem;
+  }
+  .hero-current span {
+    font-family:'JetBrains Mono',monospace; font-size:.64rem; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--blue); background:var(--blue-soft);
+    border-radius:999px; padding:5px 9px; font-weight:600;
+  }
+  .hero-current strong { font-weight:700; color:var(--ink); }
+  .hero-current em { font-style:normal; color:var(--ink-mute); font-size:.78rem; }
+
+  .snapshot-section { padding-top:0; padding-bottom:55px; }
+  .snapshot-shell {
+    max-width:1280px; margin:0 auto; background:var(--ink); color:white;
+    border-radius:24px; padding:34px 38px; display:grid;
+    grid-template-columns:1.25fr 1fr; gap:34px; align-items:center;
+    box-shadow:0 24px 60px rgba(5,8,20,.14); position:relative; overflow:hidden;
+  }
+  .snapshot-shell::after {
+    content:''; position:absolute; width:320px; height:320px; border-radius:50%;
+    right:-120px; top:-150px; background:radial-gradient(circle,rgba(6,182,212,.22),transparent 68%);
+  }
+  .snapshot-kicker {
+    font-family:'JetBrains Mono',monospace; color:#8edff0; font-size:.68rem;
+    text-transform:uppercase; letter-spacing:.1em; margin-bottom:10px;
+  }
+  .snapshot-copy h2 { font-size:clamp(1.35rem,2.4vw,2.15rem); line-height:1.08; letter-spacing:-.03em; margin-bottom:12px; }
+  .snapshot-copy .grad {
+    background:linear-gradient(135deg,#9cc5ff,#7fe6f4); -webkit-background-clip:text;
+    background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .snapshot-copy p { color:#b8c2d4; max-width:640px; font-size:.9rem; }
+  .snapshot-metrics { display:grid; grid-template-columns:1fr 1fr; gap:10px; position:relative; z-index:1; }
+  .snapshot-metric { border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.055); padding:18px; border-radius:14px; }
+  .snapshot-metric strong { display:block; font-size:1.55rem; line-height:1; margin-bottom:7px; color:white; }
+  .snapshot-metric span { font-family:'JetBrains Mono',monospace; font-size:.62rem; color:#aeb9cc; }
+
+  #command { background:linear-gradient(180deg,var(--paper),var(--bg)); }
+  .command-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .command-card {
+    min-height:255px; background:var(--paper); border:1px solid var(--line); border-radius:18px;
+    padding:24px; position:relative; overflow:hidden; transition:.35s ease;
+  }
+  .command-card:hover { transform:translateY(-5px); border-color:var(--blue); box-shadow:var(--shadow-lg); }
+  .command-index { position:absolute; top:18px; right:20px; font-family:'JetBrains Mono',monospace; font-size:.65rem; color:var(--ink-faint); }
+  .command-icon {
+    width:38px; height:38px; border-radius:11px; display:grid; place-items:center;
+    background:var(--blue-soft); color:var(--blue); font-weight:800; margin-bottom:20px;
+  }
+  .command-card h3 { font-size:1.18rem; margin-bottom:9px; letter-spacing:-.02em; }
+  .command-card p { font-size:.86rem; color:var(--ink-mute); line-height:1.65; margin-bottom:18px; }
+  .command-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; }
+  .command-tags span, .case-tools span {
+    font-family:'JetBrains Mono',monospace; font-size:.61rem; padding:5px 8px; border-radius:999px;
+    background:var(--bg); color:var(--ink-mute); border:1px solid var(--line);
+  }
+  .command-flow {
+    margin-top:18px; border:1px solid var(--line); background:var(--paper);
+    padding:18px 20px; border-radius:16px; display:flex; align-items:center;
+    justify-content:center; flex-wrap:wrap; gap:10px;
+    font-family:'JetBrains Mono',monospace; font-size:.66rem; color:var(--ink-mute);
+  }
+  .command-flow b { color:var(--blue); font-weight:500; }
+
+  .case-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .case-card {
+    background:var(--paper); border:1px solid var(--line); border-radius:20px;
+    padding:28px; transition:.35s ease; position:relative; overflow:hidden;
+  }
+  .case-card:hover { transform:translateY(-4px); border-color:var(--blue); box-shadow:var(--shadow-lg); }
+  .case-card.featured { grid-column:1/-1; background:linear-gradient(135deg,#fff 0%,#f6f9ff 100%); }
+  .case-card.featured::before {
+    content:''; position:absolute; left:0; top:0; right:0; height:2px; background:var(--grad);
+  }
+  .case-top { display:flex; justify-content:space-between; align-items:flex-start; gap:18px; margin-bottom:16px; }
+  .case-no { display:block; font-family:'JetBrains Mono',monospace; font-size:.62rem; color:var(--blue); letter-spacing:.08em; margin-bottom:8px; }
+  .case-top h3 { font-size:1.2rem; line-height:1.2; letter-spacing:-.02em; }
+  .case-badge {
+    flex-shrink:0; font-family:'JetBrains Mono',monospace; font-size:.6rem; color:var(--blue);
+    border:1px solid #cbd9ff; background:var(--blue-soft); padding:6px 9px; border-radius:999px;
+  }
+  .case-summary { font-size:.9rem; color:var(--ink-mute); line-height:1.65; margin-bottom:20px; }
+  .case-columns { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:18px; }
+  .case-columns.compact { grid-template-columns:1fr 1fr; }
+  .case-columns > div { border-left:2px solid var(--line); padding-left:12px; }
+  .case-columns small { font-family:'JetBrains Mono',monospace; color:var(--ink-faint); font-size:.58rem; letter-spacing:.08em; }
+  .case-columns p { color:var(--ink-soft); font-size:.79rem; line-height:1.55; margin-top:6px; }
+  .case-tools { display:flex; flex-wrap:wrap; gap:6px; }
+  .case-note {
+    margin-top:18px; border:1px dashed #cbd5e1; border-radius:16px; padding:18px 20px;
+    display:flex; gap:18px; align-items:flex-start; background:rgba(255,255,255,.55);
+  }
+  .case-note span { font-family:'JetBrains Mono',monospace; font-size:.63rem; color:var(--blue); white-space:nowrap; text-transform:uppercase; letter-spacing:.06em; }
+  .case-note p { font-size:.8rem; color:var(--ink-mute); line-height:1.55; }
+
+  @media (max-width: 980px) {
+    .snapshot-shell { grid-template-columns:1fr; }
+    .command-grid { grid-template-columns:1fr 1fr; }
+    .case-grid { grid-template-columns:1fr; }
+    .case-card.featured { grid-column:auto; }
+  }
+  @media (max-width: 640px) {
+    .snapshot-shell { padding:26px 22px; border-radius:20px; }
+    .snapshot-metrics { grid-template-columns:1fr 1fr; }
+    .command-grid { grid-template-columns:1fr; }
+    .command-card { min-height:0; }
+    .case-card { padding:22px; }
+    .case-columns, .case-columns.compact { grid-template-columns:1fr; }
+    .case-note { flex-direction:column; gap:8px; }
+    .hero-current { margin-top:-6px; }
+  }
+
 </style>
 </head>
 <body>
@@ -1471,8 +1586,9 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#stack">Stack</a></li>
+    <li><a href="#command">Workflow</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#impact">Highlights</a></li>
+    <li><a href="#impact">Selected Work</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Contact</a>
   <div class="nav-burger" id="burger" onclick="toggleNav()">
@@ -1489,14 +1605,15 @@
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-badge"><span class="dot"></span>Open to opportunities</div>
-      <div class="hero-meta">HR Operations &nbsp;<span>·</span>&nbsp; Bangalore, India</div>
+      <div class="hero-meta">HR OPERATIONS & SHARED SERVICES &nbsp;<span>·</span>&nbsp; BENGALURU, INDIA</div>
       <h1 class="hero-name">Akhilesh <span class="grad">A L</span></h1>
       <p class="hero-title">HR Operations & Shared Services &nbsp;·&nbsp; <strong>Darwinbox</strong> Certified Practitioner</p>
-      <p class="hero-tagline">4+ years across employee lifecycle operations, Darwinbox HRIS, employee & position data, HR helpdesk, leave & attendance, payroll-input validation, MIS, audit readiness, and process improvement.</p>
-      <div class="hero-loc">Available · Bangalore, India</div>
+      <p class="hero-tagline">I run the operational layer behind reliable employee lifecycle delivery — combining Darwinbox HRIS administration, employee & position data, HR helpdesk, payroll inputs, MIS, audit readiness and process improvement across multi-entity environments.</p>
+      <div class="hero-current"><span>Current</span><strong>PivotPath</strong><em>demerged entity of Arcolab Private Limited</em></div>
+      <div class="hero-loc">Open to HR Operations · Shared Services · HRIS opportunities</div>
       <div class="hero-btns">
-        <a href="#contact" class="btn btn-primary">Contact Me</a>
-        <a href="#experience" class="btn btn-secondary">View Experience</a>
+        <a href="#impact" class="btn btn-primary">View Selected Work</a>
+        <a href="#experience" class="btn btn-secondary">Career Timeline</a>
       </div>
     </div>
 
@@ -1511,6 +1628,25 @@
     </div>
   </div>
 </section>
+<!-- RECRUITER SNAPSHOT -->
+<section id="snapshot" class="snapshot-section">
+  <div class="section-body">
+    <div class="snapshot-shell reveal">
+      <div class="snapshot-copy">
+        <div class="snapshot-kicker">Recruiter Snapshot</div>
+        <h2>HR operations built around <span class="grad">accuracy, continuity & service delivery.</span></h2>
+        <p>Hands-on across the employee lifecycle, HRIS transactions, payroll inputs, employee data, helpdesk support, reporting and audit readiness — with a practical focus on making recurring HR operations cleaner and easier to run.</p>
+      </div>
+      <div class="snapshot-metrics">
+        <div class="snapshot-metric"><strong>4+</strong><span>Years HR Operations</span></div>
+        <div class="snapshot-metric"><strong>5</strong><span>Business Units Supported</span></div>
+        <div class="snapshot-metric"><strong>✓</strong><span>Darwinbox Certified</span></div>
+        <div class="snapshot-metric"><strong>JML</strong><span>Lifecycle Ownership</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- ABOUT -->
 <section id="about">
@@ -1610,27 +1746,88 @@
     <div class="digital-callout reveal">
       <div class="callout-head">
         <div class="callout-icon">⚡</div>
-        <h4>How I use AI tools effectively</h4>
+        <h4>How I use digital tools inside HR Operations</h4>
       </div>
       <ul>
-        <li>Draft professional communication</li>
-        <li>Structure & format reports</li>
-        <li>Plan and map workflows</li>
-        <li>Build semi-automated solutions</li>
-        <li>Improve data formatting accuracy</li>
-        <li>Reduce repetitive manual effort</li>
-        <li>Improve turnaround time</li>
-        <li>Support cost-efficient operations</li>
+        <li>Validate and structure recurring HR data</li>
+        <li>Build cleaner MIS and stakeholder-ready reports</li>
+        <li>Map HR workflows and standard operating steps</li>
+        <li>Automate repeatable formatting and form-generation tasks</li>
+        <li>Improve data consistency while retaining human review</li>
+        <li>Reduce repetitive manual effort in recurring HR operations</li>
+        <li>Support faster turnaround without compromising control</li>
+        <li>Use AI as an assistant — not as a substitute for HR judgement</li>
       </ul>
     </div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
+
+<!-- HR OPERATIONS COMMAND CENTER -->
+<section id="command">
+  <div class="section-head">
+    <div class="section-label-wrap">
+      <div class="section-label">04 · Operating Model</div>
+      <h2 class="section-title">HR Operations <span class="grad">Command Center</span></h2>
+    </div>
+    <div class="section-sub">How the work connects end-to-end</div>
+  </div>
+  <div class="section-body">
+    <div class="command-grid">
+      <article class="command-card reveal">
+        <div class="command-index">01</div>
+        <div class="command-icon">↳</div>
+        <h3>Joiner</h3>
+        <p>Preboarding checks, onboarding data, BGV coordination, employee setup and stakeholder handoffs.</p>
+        <div class="command-tags"><span>Onboarding</span><span>BGV</span><span>Data setup</span></div>
+      </article>
+      <article class="command-card reveal">
+        <div class="command-index">02</div>
+        <div class="command-icon">⇄</div>
+        <h3>Move</h3>
+        <p>Transfers, manager changes, promotions, organisation updates and position-data maintenance in Darwinbox.</p>
+        <div class="command-tags"><span>Transfers</span><span>Promotions</span><span>Position data</span></div>
+      </article>
+      <article class="command-card reveal">
+        <div class="command-index">03</div>
+        <div class="command-icon">✓</div>
+        <h3>Operate</h3>
+        <p>Leave and attendance support, HR helpdesk, employee queries, master-data checks and recurring HR transactions.</p>
+        <div class="command-tags"><span>Helpdesk</span><span>L&A</span><span>Employee data</span></div>
+      </article>
+      <article class="command-card reveal">
+        <div class="command-index">04</div>
+        <div class="command-icon">₹</div>
+        <h3>Validate</h3>
+        <p>Monthly payroll-input validation across attendance, leave, encashment, joiners, exits and employee changes.</p>
+        <div class="command-tags"><span>Payroll inputs</span><span>Reconciliation</span><span>Exceptions</span></div>
+      </article>
+      <article class="command-card reveal">
+        <div class="command-index">05</div>
+        <div class="command-icon">↗</div>
+        <h3>Report</h3>
+        <p>HR MIS, headcount, lifecycle trackers, KPI dashboards and stakeholder-ready operational reporting.</p>
+        <div class="command-tags"><span>MIS</span><span>Dashboards</span><span>Headcount</span></div>
+      </article>
+      <article class="command-card reveal">
+        <div class="command-index">06</div>
+        <div class="command-icon">◎</div>
+        <h3>Govern</h3>
+        <p>Audit-ready documentation, compliance support, access/data coordination and continuous process standardisation.</p>
+        <div class="command-tags"><span>Audit readiness</span><span>Controls</span><span>SOPs</span></div>
+      </article>
+    </div>
+
+    <div class="command-flow reveal">
+      <span>JOINER</span><b>→</b><span>HRIS</span><b>→</b><span>EMPLOYEE DATA</span><b>→</b><span>PAYROLL INPUTS</span><b>→</b><span>MIS</span><b>→</b><span>AUDIT READY</span>
+    </div>
+  </div>
+</section>
 <section id="experience">
   <div class="section-head">
     <div class="section-label-wrap">
-      <div class="section-label">04 · Experience</div>
+      <div class="section-label">05 · Experience</div>
       <h2 class="section-title">Professional <span class="grad">Experience</span></h2>
     </div>
     <div class="section-sub">Career timeline</div>
@@ -1705,94 +1902,97 @@
 <section id="impact">
   <div class="section-head">
     <div class="section-label-wrap">
-      <div class="section-label">05 · Impact</div>
-      <h2 class="section-title">Work <span class="grad">Highlights</span></h2>
+      <div class="section-label">06 · Selected Work</div>
+      <h2 class="section-title">Selected <span class="grad">HR Operations Work</span></h2>
     </div>
-    <div class="section-sub">Key impact areas</div>
+    <div class="section-sub">Proof of how I approach recurring HR operations</div>
   </div>
   <div class="section-body">
-    <div class="highlights-grid">
+    <div class="case-grid">
 
-      <div class="hl-card reveal">
-        <div class="hl-header"><div class="hl-icon-wrap">🏢</div><div class="hl-num">01</div></div>
-        <div class="hl-title">Darwinbox HRIS Administration</div>
-        <ul class="hl-points">
-          <li>Joiner-Mover-Leaver transactions and workflow support</li>
-          <li>Employee and position data maintenance</li>
-          <li>Helpdesk monitoring, issue coordination and escalation</li>
-        </ul>
-      </div>
+      <article class="case-card featured reveal">
+        <div class="case-top">
+          <div><span class="case-no">CASE 01</span><h3>Darwinbox Employee Lifecycle Operations</h3></div>
+          <span class="case-badge">HRIS</span>
+        </div>
+        <p class="case-summary">End-to-end operational support for employee lifecycle transactions with an emphasis on timely processing, clean data and dependable handoffs.</p>
+        <div class="case-columns">
+          <div><small>OWNERSHIP</small><p>Onboarding, transfers, manager changes, promotions, separations and employee/position updates.</p></div>
+          <div><small>WORKFLOW</small><p>Request → validation → Darwinbox transaction → dependency follow-up → closure.</p></div>
+          <div><small>VALUE</small><p>Consistent lifecycle execution and reliable employee records across multiple business units.</p></div>
+        </div>
+        <div class="case-tools"><span>Darwinbox</span><span>JML</span><span>Employee Data</span><span>Position Data</span></div>
+      </article>
 
-      <div class="hl-card reveal">
-        <div class="hl-header"><div class="hl-icon-wrap">👥</div><div class="hl-num">02</div></div>
-        <div class="hl-title">Multi-Entity HR Operations</div>
-        <ul class="hl-points">
-          <li>Supported HR Operations across five business units</li>
-          <li>Maintained consistent lifecycle processes and service delivery</li>
-          <li>Coordinated across HRBPs, Payroll, IT and HRMS teams</li>
-        </ul>
-      </div>
+      <article class="case-card reveal">
+        <div class="case-top">
+          <div><span class="case-no">CASE 02</span><h3>Monthly Payroll Input Validation</h3></div>
+          <span class="case-badge">PAYROLL</span>
+        </div>
+        <p class="case-summary">Structured monthly validation of HR inputs before downstream payroll processing.</p>
+        <div class="case-columns compact">
+          <div><small>CHECKS</small><p>Attendance, leave, encashment, new joiners, separations and employee changes.</p></div>
+          <div><small>VALUE</small><p>Cleaner payroll handoff, better exception visibility and stronger input discipline.</p></div>
+        </div>
+        <div class="case-tools"><span>Darwinbox</span><span>Excel</span><span>Reconciliation</span></div>
+      </article>
 
-      <div class="hl-card reveal">
-        <div class="hl-header"><div class="hl-icon-wrap">🗂️</div><div class="hl-num">03</div></div>
-        <div class="hl-title">Employee Data & Governance</div>
-        <ul class="hl-points">
-          <li>Managed employee master and position-data updates</li>
-          <li>Performed reconciliations and exception follow-up</li>
-          <li>Maintained clean, reliable and audit-ready records</li>
-        </ul>
-      </div>
+      <article class="case-card reveal">
+        <div class="case-top">
+          <div><span class="case-no">CASE 03</span><h3>HR MIS & Management Reporting</h3></div>
+          <span class="case-badge">REPORTING</span>
+        </div>
+        <p class="case-summary">Recurring and ad-hoc reporting to convert operational HR data into stakeholder-ready information.</p>
+        <div class="case-columns compact">
+          <div><small>OUTPUTS</small><p>Headcount, joiner/exit MIS, onboarding trackers, employee-data reports and KPI views.</p></div>
+          <div><small>VALUE</small><p>Better visibility, structured follow-up and a more consistent reporting rhythm.</p></div>
+        </div>
+        <div class="case-tools"><span>Excel</span><span>Power BI</span><span>MIS</span><span>Data Visualisation</span></div>
+      </article>
 
-      <div class="hl-card reveal">
-        <div class="hl-header"><div class="hl-icon-wrap">💰</div><div class="hl-num">04</div></div>
-        <div class="hl-title">Payroll Input Validation</div>
-        <ul class="hl-points">
-          <li>Validated attendance, leave, encashment and joiner inputs</li>
-          <li>Supported payout and F&amp;F coordination</li>
-          <li>Improved downstream payroll-data reliability</li>
-        </ul>
-      </div>
+      <article class="case-card reveal">
+        <div class="case-top">
+          <div><span class="case-no">CASE 04</span><h3>Darwinbox Helpdesk & Level 1 Support</h3></div>
+          <span class="case-badge">SERVICE</span>
+        </div>
+        <p class="case-summary">Front-line HRIS support for employees and managers, backed by structured escalation when issues require specialist intervention.</p>
+        <div class="case-columns compact">
+          <div><small>OWNERSHIP</small><p>Ticket monitoring, query resolution, issue triage, stakeholder follow-up and escalation.</p></div>
+          <div><small>VALUE</small><p>Clearer ownership of employee queries and dependable closure of recurring HRIS issues.</p></div>
+        </div>
+        <div class="case-tools"><span>Darwinbox Helpdesk</span><span>Level 1 Support</span><span>Stakeholder Coordination</span></div>
+      </article>
 
-      <div class="hl-card reveal">
-        <div class="hl-header"><div class="hl-icon-wrap">📊</div><div class="hl-num">05</div></div>
-        <div class="hl-title">HR MIS & Reporting</div>
-        <ul class="hl-points">
-          <li>Prepared headcount, joiner/exit and employee-data trackers</li>
-          <li>Built management dashboards and KPI reporting</li>
-          <li>Supported recurring and ad-hoc stakeholder requirements</li>
-        </ul>
-      </div>
+      <article class="case-card reveal">
+        <div class="case-top">
+          <div><span class="case-no">CASE 05</span><h3>Audit Readiness & Compliance Support</h3></div>
+          <span class="case-badge">GOVERNANCE</span>
+        </div>
+        <p class="case-summary">Maintaining employee records, operational trackers and supporting documentation in a review-ready state.</p>
+        <div class="case-columns compact">
+          <div><small>SCOPE</small><p>Employee documentation, data checks, compliance reporting and cross-functional evidence coordination.</p></div>
+          <div><small>VALUE</small><p>More dependable records and faster retrieval of operational evidence during reviews.</p></div>
+        </div>
+        <div class="case-tools"><span>Audit Readiness</span><span>Compliance</span><span>Documentation</span></div>
+      </article>
 
-      <div class="hl-card reveal">
-        <div class="hl-header"><div class="hl-icon-wrap">✅</div><div class="hl-num">06</div></div>
-        <div class="hl-title">Audit Readiness & Compliance</div>
-        <ul class="hl-points">
-          <li>Maintained employee documentation and audit-ready records</li>
-          <li>Supported compliance reports including Form T, A and F</li>
-          <li>Coordinated data and documentation for internal reviews</li>
-        </ul>
-      </div>
+      <article class="case-card reveal">
+        <div class="case-top">
+          <div><span class="case-no">CASE 06</span><h3>HR Process Standardisation & Automation</h3></div>
+          <span class="case-badge">IMPROVEMENT</span>
+        </div>
+        <p class="case-summary">Using practical tools to simplify repetitive HR work without losing control, traceability or human review.</p>
+        <div class="case-columns compact">
+          <div><small>APPROACH</small><p>Standard templates, Excel checks, Python-assisted form generation and AI-assisted workflow structuring.</p></div>
+          <div><small>VALUE</small><p>Less repetitive effort, more consistent outputs and easier recurring execution.</p></div>
+        </div>
+        <div class="case-tools"><span>Excel</span><span>Python</span><span>AI Productivity</span><span>SOPs</span></div>
+      </article>
 
-      <div class="hl-card reveal">
-        <div class="hl-header"><div class="hl-icon-wrap">⚙️</div><div class="hl-num">07</div></div>
-        <div class="hl-title">Process Improvement</div>
-        <ul class="hl-points">
-          <li>Standardised recurring HR Operations workflows</li>
-          <li>Used Excel, Python and AI-assisted tools to reduce manual effort</li>
-          <li>Improved reporting consistency and turnaround time</li>
-        </ul>
-      </div>
-
-      <div class="hl-card reveal">
-        <div class="hl-header"><div class="hl-icon-wrap">🧭</div><div class="hl-num">08</div></div>
-        <div class="hl-title">Employee Lifecycle Coordination</div>
-        <ul class="hl-points">
-          <li>Preboarding, onboarding, BGV, transfers and promotions</li>
-          <li>Separations and employee/access update coordination</li>
-          <li>Cross-functional follow-through across lifecycle activities</li>
-        </ul>
-      </div>
-
+    </div>
+    <div class="case-note reveal">
+      <span>Portfolio principle</span>
+      <p>These examples describe actual responsibility areas and working methods. I intentionally avoid invented percentages or impact claims where verified measurements are not available.</p>
     </div>
   </div>
 </section>
@@ -1801,7 +2001,7 @@
 <section id="education">
   <div class="section-head">
     <div class="section-label-wrap">
-      <div class="section-label">06 · Education</div>
+      <div class="section-label">07 · Education</div>
       <h2 class="section-title"><span class="grad">Education</span></h2>
     </div>
     <div class="section-sub">Academic background</div>
@@ -1832,7 +2032,7 @@
 <section id="certs">
   <div class="section-head">
     <div class="section-label-wrap">
-      <div class="section-label">07 · Credentials</div>
+      <div class="section-label">08 · Credentials</div>
       <h2 class="section-title"><span class="grad">Certifications</span></h2>
     </div>
     <div class="section-sub">Professional credentials</div>
@@ -1871,7 +2071,7 @@
 <section id="languages">
   <div class="section-head">
     <div class="section-label-wrap">
-      <div class="section-label">08 · Languages</div>
+      <div class="section-label">09 · Languages</div>
       <h2 class="section-title"><span class="grad">Languages</span></h2>
     </div>
     <div class="section-sub">Communication channels</div>
@@ -1889,7 +2089,7 @@
 <section id="contact">
   <div class="section-body">
     <div class="contact-wrap reveal">
-      <div class="contact-label-mini">09 · Get in touch</div>
+      <div class="contact-label-mini">10 · Get in touch</div>
       <p class="contact-cta">Let's connect for opportunities in <span class="grad">HR Operations, Shared Services, HRIS & People Operations</span> with a focus on Darwinbox, employee lifecycle, data quality and process improvement.</p>
 
       <div class="contact-grid">
