@@ -2225,6 +2225,60 @@
     }
   }
 
+
+  /* ─── PORTFOLIO TRAFFIC COUNTER ─── */
+  .portfolio-traffic {
+    position:relative;
+    z-index:1;
+    margin-top:22px;
+    padding:16px 18px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:16px;
+    background:rgba(255,255,255,.055);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+  }
+  .traffic-copy {
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+  }
+  .traffic-kicker {
+    font-family:'JetBrains Mono',monospace;
+    font-size:.55rem;
+    letter-spacing:.11em;
+    color:#72dce8;
+  }
+  .traffic-copy strong {
+    font-size:.84rem;
+    color:#fff;
+  }
+  .traffic-copy small {
+    font-size:.68rem;
+    color:rgba(255,255,255,.56);
+  }
+  .traffic-badge {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    flex-shrink:0;
+  }
+  .traffic-badge img {
+    display:block;
+    max-width:100%;
+    height:auto;
+  }
+  @media (max-width:640px) {
+    .portfolio-traffic {
+      align-items:flex-start;
+      flex-direction:column;
+      gap:12px;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -2991,6 +3045,22 @@
             <div class="contact-value">Bangalore, India</div>
           </div>
         </div>
+      </div>
+
+      <div class="portfolio-traffic reveal">
+        <div class="traffic-copy">
+          <span class="traffic-kicker">PORTFOLIO TRAFFIC</span>
+          <strong>Today + Total Views</strong>
+          <small>Live counter updates as the portfolio is viewed.</small>
+        </div>
+        <a class="traffic-badge" href="https://hits.sh/akhileshal96.github.io/" target="_blank" rel="noopener noreferrer" aria-label="View portfolio traffic statistics">
+          <img
+            src="https://hits.sh/akhileshal96.github.io.svg?view=today-total&style=flat-square&label=Portfolio%20Views&color=1e54f5&labelColor=050814"
+            alt="Portfolio views today and total"
+            loading="eager"
+            referrerpolicy="no-referrer"
+          />
+        </a>
       </div>
     </div>
   </div>
