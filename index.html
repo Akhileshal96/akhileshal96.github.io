@@ -1635,6 +1635,244 @@
     .command-flow { justify-content:flex-start; }
   }
 
+
+  /* ─── DEVICE-AWARE RESPONSIVE AUTOFIT ─── */
+  /* Collapse earlier than a typical phone breakpoint because in-app browsers
+     can report a wider layout viewport while still displaying on a phone. */
+  @media (max-width: 1100px) {
+    nav {
+      width: calc(100% - 24px);
+      max-width: 720px;
+      padding: 8px 8px 8px 16px;
+      gap: 10px;
+    }
+
+    .nav-logo {
+      font-size: .78rem;
+      padding-right: 12px;
+      white-space: nowrap;
+    }
+
+    .nav-links { display: none; }
+
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      right: 0;
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 20px;
+      gap: 15px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .nav-burger { display: flex; }
+
+    #hero {
+      min-height: auto;
+      height: auto;
+      padding: 105px 5% 46px;
+      display: block;
+    }
+
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      width: min(100%, 720px);
+      max-width: 720px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .hero-photo-wrap {
+      grid-row: 1;
+      width: clamp(170px, 26vw, 230px);
+      max-width: 230px;
+      justify-self: center;
+      margin: 0 auto 4px;
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hero-badge { margin-bottom: 18px; }
+    .hero-name { margin-bottom: 14px; }
+    .hero-title { margin-bottom: 16px; }
+    .hero-tagline {
+      margin-bottom: 22px;
+      max-width: 640px;
+      line-height: 1.6;
+    }
+    .hero-current { margin: -2px 0 18px; }
+    .hero-loc { margin-bottom: 24px; }
+    .hero-btns { gap: 10px; }
+
+    #snapshot {
+      padding-top: 0;
+      padding-bottom: 34px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    nav {
+      top: 10px;
+      width: calc(100% - 20px);
+      min-height: 54px;
+    }
+
+    .nav-cta {
+      padding: 8px 13px;
+      font-size: .72rem;
+    }
+
+    #hero {
+      padding: 88px 20px 34px;
+    }
+
+    .hero-inner { gap: 18px; }
+
+    .hero-photo-wrap {
+      width: clamp(145px, 46vw, 190px);
+      max-width: 190px;
+      margin-bottom: 0;
+    }
+
+    .hero-badge {
+      margin-bottom: 14px;
+      padding: 6px 11px 6px 10px;
+      font-size: .64rem;
+    }
+
+    .hero-meta {
+      font-size: .61rem;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .hero-name {
+      font-size: clamp(2.55rem, 13vw, 3.45rem);
+      line-height: .98;
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-size: .92rem;
+      line-height: 1.45;
+      margin-bottom: 13px;
+    }
+
+    .hero-tagline {
+      font-size: .88rem;
+      line-height: 1.58;
+      margin-bottom: 17px;
+    }
+
+    .hero-current {
+      gap: 6px 8px;
+      margin: 0 0 14px;
+      font-size: .74rem;
+    }
+
+    .hero-current em {
+      width: 100%;
+      font-size: .69rem;
+    }
+
+    .hero-loc {
+      display: flex;
+      width: fit-content;
+      max-width: 100%;
+      white-space: normal;
+      line-height: 1.45;
+      font-size: .68rem;
+      margin-bottom: 18px;
+      padding: 6px 10px;
+    }
+
+    .hero-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+    }
+
+    .hero-btns .btn {
+      width: 100%;
+      justify-content: center;
+      padding: 11px 12px;
+      font-size: .76rem;
+    }
+
+    #snapshot {
+      padding: 0 20px 26px;
+    }
+
+    .snapshot-shell {
+      padding: 24px 20px;
+      gap: 22px;
+    }
+
+    section:not(#hero):not(#snapshot) {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+  }
+
+  @media (max-width: 430px) {
+    #hero {
+      padding: 82px 16px 30px;
+    }
+
+    .hero-photo-wrap {
+      width: min(160px, 44vw);
+    }
+
+    .hero-name {
+      font-size: clamp(2.35rem, 12vw, 3rem);
+    }
+
+    .hero-btns {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-btns .btn {
+      min-height: 44px;
+    }
+
+    #snapshot {
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-bottom: 22px;
+    }
+
+    .snapshot-metrics {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* Short screens / embedded webviews: never force a tall empty hero. */
+  @media (max-height: 760px) and (max-width: 1100px) {
+    #hero {
+      min-height: auto;
+      padding-top: 82px;
+      padding-bottom: 30px;
+    }
+
+    .hero-photo-wrap {
+      width: clamp(135px, 22vw, 175px);
+      max-width: 175px;
+    }
+
+    .hero-inner { gap: 16px; }
+  }
+
 </style>
 </head>
 <body>
